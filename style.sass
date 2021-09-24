@@ -1,0 +1,198 @@
+* 
+	margin: 0 
+	padding: 0 
+	-webkit-box-sizing: border-box 
+	box-sizing: border-box 
+body 
+	width: 100% 
+	height: 100vh 
+	display: -webkit-box 
+	display: -ms-flexbox 
+	display: flex 
+	-webkit-box-pack: center 
+	-ms-flex-pack: center 
+	justify-content: center 
+	-webkit-box-align: center 
+	-ms-flex-align: center 
+	align-items: center 
+	background: darkblue 
+	font-family: 'roboto', sans-serif 
+.music-player 
+	width: 450px 
+	height: 550px 
+	border-radius: 20px 
+	background: rgba(3, 3, 20, 0.08) 
+	-webkit-box-shadow: 0 40px 100px rgba(221, 217, 226, 0.1) 
+	box-shadow: 0 40px 100px rgba(221, 217, 226, 0.1) 
+	padding: 30px 
+	overflow: hidden 
+	color: #d5eebb 
+.music-name, .artist-name 
+	text-align: center 
+	text-transform: capitalize 
+.music-name 
+	font-size: 65px 
+	font-weight: 500 
+	margin-bottom: 10px 
+.artist-name 
+	font-size: 20px 
+.disk 
+	position: relative 
+	display: block 
+	margin: 40px auto 
+	width: 180px 
+	height: 180px 
+	border-radius: 50% 
+	background-image: url('./image/cover_1.png') 
+	background-size: cover 
+	-webkit-box-shadow: 0 0 0 10px rgba(248, 250, 248, 0.767) 
+	box-shadow: 0 0 0 10px rgba(248, 250, 248, 0.767) 
+	-webkit-animation: rotate 20s linear infinite 
+	animation: rotate 20s linear infinite 
+	-webkit-animation-play-state: paused 
+	animation-play-state: paused 
+	&.play 
+		-webkit-animation-play-state: running 
+		animation-play-state: running 
+	&::before 
+		content: '' 
+		position: absolute 
+		top: 50% 
+		left: 50% 
+		-webkit-transform: translate(-50%, -50%) 
+		-ms-transform: translate(-50%, -50%) 
+		transform: translate(-50%, -50%) 
+		width: 30px 
+		height: 30px 
+		border-radius: 50% 
+		background: #f8f8f8 
+.song-slider 
+	width: 100% 
+	position: relative 
+.seek-bar 
+	-webkit-appearance: none 
+	width: 100% 
+	height: 5px 
+	border-radius: 10px 
+	background: #191b16 
+	overflow: hidden 
+	cursor: pointer 
+	&::-webkit-slider-thumb 
+		-webkit-appearance: none 
+		width: 1px 
+		height: 20px 
+		-webkit-box-shadow: -400px 0 0 400px #191b16 
+		box-shadow: -400px 0 0 400px #191b16 
+.current-time, .song-duration 
+	font-size: 14px 
+.song-duration 
+	position: absolute 
+	right: 0 
+.controls 
+	width: 60% 
+	display: -webkit-box 
+	display: -ms-flexbox 
+	display: flex 
+	-webkit-box-pack: justify 
+	-ms-flex-pack: justify 
+	justify-content: space-between 
+	-webkit-box-align: center 
+	-ms-flex-align: center 
+	align-items: center 
+	margin: auto 
+	margin-top: 20px 
+.play-btn 
+	position: relative 
+	width: 60px 
+	height: 60px 
+	border-radius: 50% 
+	background: #d5eebb 
+	cursor: pointer 
+	border: none 
+	span 
+		position: absolute 
+		top: 50% 
+		left: 25% 
+		-webkit-transform: translateY(-50%) 
+		-ms-transform: translateY(-50%) 
+		transform: translateY(-50%) 
+		width: 10px 
+		height: 30px 
+		border-radius: 2px 
+		background: #5f7a61 
+		-webkit-transition: .5s 
+		-o-transition: .5s 
+		transition: .5s 
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%) 
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%) 
+		&:nth-child(2) 
+			left: 55% 
+			-webkit-transform-origin: center 
+			-ms-transform-origin: center 
+			transform-origin: center 
+	&.pause 
+		-webkit-animation: pulse 2s linear infinite 
+		animation: pulse 2s linear infinite 
+		span 
+			&:nth-child(2) 
+				-webkit-transform: translateY(-50%) scaleY(0) 
+				-ms-transform: translateY(-50%) scaleY(0) 
+				transform: translateY(-50%) scaleY(0) 
+			&:nth-child(1) 
+				width: 35% 
+				left: 53% 
+				-webkit-transform: translate(-50%, -50%) 
+				-ms-transform: translate(-50%, -50%) 
+				transform: translate(-50%, -50%) 
+				border-radius: 0 
+				-webkit-clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%) 
+				clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%) 
+@-webkit-keyframes 
+	pulse 
+		0% {
+        -webkit-box-shadow: 0 
+		box-shadow: 0 
+	rotate 
+		0% {
+        -webkit-transform: rotate(0) 
+		transform: rotate(0) 
+50% 
+	-webkit-box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1) 
+	box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1) 
+	-webkit-box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1) 
+	box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1) 
+100% 
+	-webkit-box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4) 
+	box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4) 
+	-webkit-box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4) 
+	box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4) 
+	-webkit-transform: rotate(360deg) 
+	transform: rotate(360deg) 
+	-webkit-transform: rotate(360deg) 
+	transform: rotate(360deg) 
+} 
+	@keyframes 
+		pulse 
+			0% {
+        -webkit-box-shadow: 0 
+			box-shadow: 0 
+		rotate 
+			0% {
+        -webkit-transform: rotate(0) 
+			transform: rotate(0) 
+	.btn 
+		width: 40px 
+		height: 40px 
+		background: #d5eebb 
+		border-radius: 50% 
+		display: -webkit-box 
+		display: -ms-flexbox 
+		display: flex 
+		-webkit-box-pack: center 
+		-ms-flex-pack: center 
+		justify-content: center 
+		-webkit-box-align: center 
+		-ms-flex-align: center 
+		align-items: center 
+		border: none 
+		cursor: pointer 
